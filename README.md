@@ -22,11 +22,15 @@ pip install git+https://github.com/jeongsk/laas-utils.git
 ## Usage
 
 ```python
-import laas_utils
+from laas_utils.langchain_laas.chat_models import ChatLaaS
 
-# Example: Generate a linear trajectory
-trajectory = laas_utils.generate_linear_trajectory(start_point=[0, 0, 0], end_point=[1, 1, 1], duration=5)
-print(trajectory)
+# Example
+llm = ChatLaaS(
+    api_key=os.environ["LAAS_API_KEY"],
+    laas_project=os.environ["LAAS_PROJECT"],
+    laas_hash=os.environ["LAAS_HASH"],
+)
+print(llm.invoke("hello"))
 ```
 
 ## Contributing
