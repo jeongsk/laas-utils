@@ -21,7 +21,7 @@ class ChatLaaS(BaseChatOpenAI):
         alias="project", default_factory=from_env("LAAS_PROJECT", default=None)
     )
     laas_hash: Optional[str] = Field(default=None, alias="hash")
-    model_name: str = Field(default="gpt-4o-mini", alias="model")
+    # model_name: str = Field(default="gpt-4o-mini", alias="model")
     temperature: Optional[float] = Field(default=None)
     params: Optional[Dict[str, Any]] = Field(default=None)
     timeout: Optional[float] = Field(default=60.0)
@@ -95,7 +95,7 @@ class ChatLaaS(BaseChatOpenAI):
     ) -> ChatResult:
         payload = self._get_request_payload(
             messages,
-            model=self.model_name,
+            # model=self.model_name,
             stop=stop,
             extra_body={
                 "hash": self.laas_hash,
