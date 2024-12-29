@@ -8,7 +8,7 @@ setup(
     install_requires=[
         'langchain',
     ],
-    python_requires=">=3.11.0",
+    python_requires=">=3.11",
     author='jeongsk',
     zip_safe=False,
     author_email='jeongseok@wantedlab.com',
